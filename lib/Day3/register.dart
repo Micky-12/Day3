@@ -12,12 +12,19 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('REGISTER'),
+        title: const Text('SWIGGY',style: TextStyle(color: Colors.white),),
         centerTitle: true,
+
       ),
-      body: Column(
+      body: ListView( children: [
+        Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Padding(
+            padding:  EdgeInsets.all(8.0),
+            child: Text('Hey there\nCreate Account',
+            style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 40),)
+          ),
           const Padding(
             padding:  EdgeInsets.all(25.0),
             child: TextField(
@@ -44,14 +51,36 @@ class _RegisterState extends State<Register> {
                 label: Text('Confirm Password'),
                 border: OutlineInputBorder() ),obscureText: true),
           ),
+           Row(
+            children: const [
+              Text('      Privacy Policy  Terms and Conditions',
+              style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 16,
+              fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
           Padding(
             padding: const EdgeInsets.all(25.0),
             child: SizedBox(
                 width: 1000,
-                child: ElevatedButton(onPressed: () {}, child: const Text('SUBMIT'))),
+                height: 50,
+                child: ElevatedButton(onPressed: () {},
+                    child: const Text('SUBMIT',
+                        style: TextStyle(color: Colors.white, fontSize: 23,
+                        ) ),
+                )),
           ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Text("I'M HERE ALREADY:) LOGIN",
+            style: TextStyle(color: Colors.deepOrangeAccent,
+                fontWeight: FontWeight.bold),
+
+            ),
+          )
         ],
       ),
+    ])
     );
   }
 }
